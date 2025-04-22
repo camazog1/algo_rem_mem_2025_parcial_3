@@ -8,12 +8,11 @@ segmentos =[ ('.text', 0x00, 0x1A),
              ('.stack', 0xC0, 0x22),
             ]
 
-
 def is_valid(virtual_dir, segmentos):
     for i, base, limit in segmentos:
-        if base > virtual_dir < base + limit:
-            return False
-    return True
+        if base <= virtual_dir < base + limit:
+            return True
+    return False
 
 def procesar(segmentos, reqs, marcos_libres):
     size_page = 0x10
@@ -22,9 +21,9 @@ def procesar(segmentos, reqs, marcos_libres):
     result = []
     
     for req in reqs:
-        if is_valid(req, segmentos):
+        if not is_valid(req, segmentos):
             result.append((req, 0x1FF, "Segmentation Fault"))
-            continue
+            break
 
         virtual_page = req // size_page
         offset = req % size_page
