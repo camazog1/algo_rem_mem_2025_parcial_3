@@ -67,7 +67,7 @@ Req: 0xf1 Direccion Fisica: 0x1ff Acción: Segmention Fault
 ```
 Me toco realizar el algoritmo **LRU**, esta fue mi salida con el ejemplo anterior
 
-![Salida](https://ibb.co/GQmkDp9Y)
+![Salida](https://i.ibb.co/Kxn7ghD4/Captura-desde-2025-04-25-09-20-59.png)
 
 ## Autor.
 
