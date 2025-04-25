@@ -14,7 +14,10 @@ def is_valid(virtual_dir, segmentos):
             return True
     return False
 
-def procesar(segmentos, reqs, marcos_libres):
+def procesar(segmentos, reqs, marcos_libres): 
+
+    # LRU
+
     size_page = 0x10
     table_page = {}
     recent_use = []
